@@ -9,16 +9,26 @@ class GridViewPage extends StatefulWidget {
   State<StatefulWidget> createState() {
     return _GridViewPageState();
   }
-
 }
 
 class _GridViewPageState extends State<GridViewPage> {
   int _columnsCount = 2;
   final ScrollController _scrollController = ScrollController();
+
+  @override
+  void initState() {
+    _scrollController.addListener(() {
+      setState(() {});
+    });
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text('${_scrollController.hasClients ? _scrollController.position.pixels.toInt().toString() : 0} pixels'),
+      ),
       floatingActionButton: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
