@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class SliverAppBarPage extends StatefulWidget {
   const SliverAppBarPage({Key? key}) : super(key: key);
@@ -21,8 +22,9 @@ class _SliverAppBarPageState extends State<SliverAppBarPage> {
           expandedHeight: 180,
           toolbarHeight: 60,
           flexibleSpace: FlexibleSpaceBar(
-            title: const Text(
-              '記事カテゴリー'
+            title: Text(
+              '記事カテゴリー',
+              style: GoogleFonts.kosugiMaru(),
             ),
             background: SizedBox(
               width: double.infinity,
@@ -49,9 +51,10 @@ class _SliverAppBarPageState extends State<SliverAppBarPage> {
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        const Expanded(
+                        Expanded(
                           child: Text(
-                            'Sept. 29 2020'
+                            'Sept. 29 2020',
+                            style: GoogleFonts.lato(),
                           ),
                         ),
                         IconButton(
@@ -63,8 +66,9 @@ class _SliverAppBarPageState extends State<SliverAppBarPage> {
                         )
                       ],
                     ),
-                    const Text(
-                      '記事タイトル記事タイトル記事タイトル記事タイトル記事タイトル記事タイトル'
+                    Text(
+                      '記事タイトル記事タイトル記事タイトル記事タイトル記事タイトル記事タイトル',
+                      style: GoogleFonts.sawarabiGothic(),
                     ),
                     const Divider(
                       height: 30,
@@ -106,8 +110,9 @@ class _SliverAppBarPageState extends State<SliverAppBarPage> {
                         const SizedBox(
                           width: 5.0,
                         ),
-                        const Text(
-                          '350'
+                        Text(
+                          '350',
+                          style: GoogleFonts.lato(),
                         ),
                         const SizedBox(
                           width: 16.0,
@@ -119,8 +124,9 @@ class _SliverAppBarPageState extends State<SliverAppBarPage> {
                         const SizedBox(
                           width: 5.0,
                         ),
-                        const Text(
-                          '25'
+                        Text(
+                          '25',
+                          style: GoogleFonts.lato(),
                         )
                       ],
                     ),
@@ -130,8 +136,9 @@ class _SliverAppBarPageState extends State<SliverAppBarPage> {
                     const SizedBox(
                       height: 10.0,
                     ),
-                    const Text(
-                      'テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト'
+                    Text(
+                      'テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト',
+                      style: GoogleFonts.sawarabiGothic(),
                     )
                   ],
                 ),
