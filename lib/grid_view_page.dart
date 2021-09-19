@@ -1,4 +1,5 @@
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'dart:math' as math;
@@ -92,6 +93,7 @@ class _GridViewPageState extends State<GridViewPage> {
         ),
         itemBuilder: (BuildContext context, int index) {
           final gridItemColor = Color((math.Random(index).nextDouble() * 0x00FFFFFF).toInt()).withOpacity(1);
+          final gridItemBrightness = gridItemColor.computeLuminance();
           return Stack(
             children: [
               Container(
@@ -99,9 +101,9 @@ class _GridViewPageState extends State<GridViewPage> {
                 child: Center(
                   child: Text(
                     index.toString(),
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 42,
-                      color: Colors.white
+                      color: gridItemBrightness > 0.5 ? Colors.black : Colors.white
                     ),
                   ),
                 ),
@@ -111,9 +113,9 @@ class _GridViewPageState extends State<GridViewPage> {
                   bottom: 10,
                 child: Text(
                   gridItemColor.toString().toUpperCase().substring(6, 16).replaceAll('0X', '#'),
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 18,
-                    color: Colors.white
+                    color: gridItemBrightness > 0.5 ? Colors.black : Colors.white
                   ),
                 ),
               )
