@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ifdf/grid_view_page.dart';
+import 'package:ifdf/shrinkable_footer_page.dart';
 import 'package:ifdf/sliver_app_bar_page.dart';
 
 void main() {
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
-      home: const SliverAppBarPage(),
+      home: const ShrinkableFooterPage()
     );
   }
 }
