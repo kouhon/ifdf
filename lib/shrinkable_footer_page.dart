@@ -111,7 +111,7 @@ class _BottomNavigationBar extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
     return AnimatedContainer(
       duration: const Duration(milliseconds: 200),
-      height: 60,
+      height: isHiding ? 21 : 60,
       color: const Color(0xfffeeae6),
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 16),
