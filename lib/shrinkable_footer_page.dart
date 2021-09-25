@@ -162,17 +162,22 @@ class _IconTextItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: 0.25 * (deviceWidth - 32),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      child: Stack(
         children: [
-          Icon(
-            icon,
-            color: const Color(0xFF442c2e),
-            size: 24,
+          Align(
+            alignment: Alignment.topCenter,
+            child: Icon(
+              icon,
+              color: const Color(0xFF442c2e),
+              size: 24,
+            ),
           ),
-          Text(
-            title,
-            style: const TextStyle(fontSize: 16),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Text(
+              title,
+              style: const TextStyle(fontSize: 16),
+            )
           )
         ],
       ),
