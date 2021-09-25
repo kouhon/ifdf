@@ -119,21 +119,25 @@ class _BottomNavigationBar extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             _IconTextItem(
+              isHiding: isHiding,
               deviceWidth: width,
               icon: Icons.home,
               title: 'Home'
             ),
             _IconTextItem(
+              isHiding: isHiding,
               deviceWidth: width,
               icon: Icons.star,
               title: 'Favorite',
             ),
             _IconTextItem(
+              isHiding: isHiding,
               deviceWidth: width,
               icon: Icons.favorite,
               title: 'Like',
             ),
             _IconTextItem(
+              isHiding: isHiding,
               deviceWidth: width,
               icon: Icons.settings,
               title: 'Menu',
@@ -149,12 +153,13 @@ class _IconTextItem extends StatelessWidget {
   const _IconTextItem({
     Key? key,
     required this.deviceWidth,
+    required this.isHiding,
     required this.icon,
     required this.title
   }) : super(key: key);
 
   final double deviceWidth;
-
+  final bool isHiding;
   final IconData icon;
   final String title;
 
@@ -172,12 +177,16 @@ class _IconTextItem extends StatelessWidget {
               size: 24,
             ),
           ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Text(
-              title,
-              style: const TextStyle(fontSize: 16),
-            )
+          AnimatedOpacity(
+            opacity: isHiding ? 0 : 1,
+            duration: Duration(milliseconds: 120),
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: Text(
+                title,
+                style: const TextStyle(fontSize: 16),
+              )
+            ),
           )
         ],
       ),
