@@ -180,6 +180,7 @@ class _IconTextItem extends StatelessWidget {
           AnimatedOpacity(
             opacity: isHiding ? 0 : 1,
             duration: const Duration(milliseconds: 120),
+            curve: Curves.easeInQuint,
             child: Align(
               alignment: Alignment.bottomCenter,
               child: Text(
