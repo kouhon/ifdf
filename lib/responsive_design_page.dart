@@ -58,30 +58,37 @@ class _Body extends StatelessWidget {
             ),
           ),
           const Spacer(),
-          SizedBox(
-            height: 42,
-            width: 300,
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                textStyle: const TextStyle(
-                  color: Colors.white
-                ),
-                primary: Theme.of(context).colorScheme.secondary,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(4)
-                )
-              ),
-              onPressed: () {},
-              child: const Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 15
-                ),
-                child: Text(
-                  'get started',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold
+          ConstrainedBox(
+            constraints: const BoxConstraints(
+              maxWidth: 650
+            ),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 50),
+              child: SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      textStyle: const TextStyle(
+                          color: Colors.white
+                      ),
+                      primary: Theme.of(context).colorScheme.secondary,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(4)
+                      )
+                  ),
+                  onPressed: () {},
+                  child: const Padding(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: 15
+                    ),
+                    child: Text(
+                      'get started',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold
+                      ),
+                    ),
                   ),
                 ),
               ),
