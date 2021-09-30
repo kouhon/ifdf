@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ifdf/responsive_design_page.dart';
 
+import 'hero_page.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -25,7 +27,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const ResponsiveDesignPage()
+      home: const HeroFromPage()
     );
   }
 }
