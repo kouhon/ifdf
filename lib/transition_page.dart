@@ -32,6 +32,20 @@ class TransitionPage extends StatelessWidget {
                     PageRouteBuilder(
                       pageBuilder: (context, animation, secondaryAnimation) {
                         return const _PageA();
+                      },
+                      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                        return SlideTransition(
+                          position: Tween(
+                            begin: const Offset(-1, -1),
+                            end: const Offset(0, 0)
+                          ).animate(
+                            CurvedAnimation(
+                              parent: animation,
+                              curve: Curves.easeOutCubic
+                            )
+                          ),
+                          child: child,
+                        );
                       }
                     )
                   );
