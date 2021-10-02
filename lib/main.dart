@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ifdf/responsive_design_page.dart';
-
-import 'hero_page.dart';
+import 'package:ifdf/transition_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,7 +25,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const HeroFromPage()
+      home: const TransitionPage()
     );
   }
 }
