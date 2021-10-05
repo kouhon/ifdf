@@ -50,7 +50,40 @@ class TransitionPage extends StatelessWidget {
                     )
                   );
                 },
-                child: const Text('遷移'),
+                child: const Text('スライド'),
+              ),
+            ),
+            SizedBox(
+              width: 120,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.grey[300],
+                  onPrimary: Colors.black
+                ),
+                onPressed: () {
+                  Navigator.of(context).push(
+                    PageRouteBuilder(
+                      pageBuilder: (context, animation, secondaryAnimation) {
+                        return const _PageA();
+                      },
+                      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                        return RotationTransition(
+                          turns: Tween(
+                            begin: 0.0,
+                            end: 2.0
+                          ).animate(
+                            CurvedAnimation(
+                              parent: animation,
+                              curve: Curves.easeOutCubic
+                            )
+                          ),
+                          child: child,
+                        );
+                      }
+                    )
+                  );
+                },
+                child: const Text('回転'),
               ),
             )
           ],
