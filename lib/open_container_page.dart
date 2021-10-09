@@ -1,3 +1,4 @@
+import 'package:animations/animations.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -68,12 +69,9 @@ class HeroToPage extends StatelessWidget {
         ),
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Hero(
-            tag: HeroImages.titles[index],
-            child: Center(
-              child: ImageItem(
-                url: HeroImages.urls[index],
-              ),
+          child: Center(
+            child: ImageItem(
+              url: HeroImages.urls[index],
             ),
           ),
         ),
@@ -96,21 +94,22 @@ class HeroFromPage extends StatelessWidget {
         childAspectRatio: 1.5,
         children: [
           for (var index = 0; index < HeroImages.titles.length; index++)
-            Hero(
-              tag: HeroImages.titles[index],
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => HeroToPage(
-                        index: index,
-                      )
-                    )
-                  );
-                },
-                child: ImageItem(
-                  url: HeroImages.urls[index],
-                ),
+            OpenContainer(
+              closedBuilder: (_, openContainer) {
+                return GestureDetector(
+                  onTap: openContainer,
+                  child: ImageItem(
+                    url: HeroImages.urls[index],
+                  ),
+                );
+              },
+              openBuilder: (_, closeContainer) {
+                return HeroToPage(index: index);
+              },
+              openColor: Colors.black87,
+              closedColor: Colors.black87,
+              closedShape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(0))
               ),
             )
         ],
