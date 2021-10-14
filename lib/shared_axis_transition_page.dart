@@ -10,7 +10,7 @@ class SharedAxisTransitionPage extends StatefulWidget {
 }
 
 class _SharedAxisTransitionPageState extends State<SharedAxisTransitionPage> {
-  final SharedAxisTransitionType _transitionType = SharedAxisTransitionType.horizontal;
+  SharedAxisTransitionType _transitionType = SharedAxisTransitionType.horizontal;
   bool _isCatImage = true;
 
   @override
@@ -39,11 +39,46 @@ class _SharedAxisTransitionPageState extends State<SharedAxisTransitionPage> {
               ),
               onPressed: _toggleImages,
               child: const Text('切り替える'),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Radio(
+                  value: SharedAxisTransitionType.horizontal,
+                  groupValue: _transitionType,
+                  onChanged: (SharedAxisTransitionType? newValue) {
+                    _updateTransitionType(newValue!);
+                  },
+                ),
+                const Text('X'),
+                Radio(
+                  value: SharedAxisTransitionType.vertical,
+                  groupValue: _transitionType,
+                  onChanged: (SharedAxisTransitionType? newValue) {
+                    _updateTransitionType(newValue!);
+                  },
+                ),
+                const Text('Y'),
+                Radio(
+                  value: SharedAxisTransitionType.scaled,
+                  groupValue: _transitionType,
+                  onChanged: (SharedAxisTransitionType? newValue) {
+                    _updateTransitionType(newValue!);
+                  },
+                ),
+                const Text('Z')
+              ],
             )
           ],
         ),
       ),
     );
+  }
+
+  void _updateTransitionType(SharedAxisTransitionType newType) {
+    setState(() {
+      _transitionType = newType;
+    });
   }
 
   void _toggleImages() {
