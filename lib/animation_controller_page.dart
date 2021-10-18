@@ -9,7 +9,24 @@ class AnimationControllerPage extends StatefulWidget {
   _AnimationControllerPageState createState() => _AnimationControllerPageState();
 }
 
-class _AnimationControllerPageState extends State<AnimationControllerPage> {
+class _AnimationControllerPageState extends State<AnimationControllerPage> with SingleTickerProviderStateMixin {
+  late AnimationController _animationController;
+
+  @override
+  void initState() {
+    super.initState();
+    _animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 15)
+    );
+  }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
