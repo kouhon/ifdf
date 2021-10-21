@@ -62,7 +62,7 @@ class _AnimationControllerPageState extends State<AnimationControllerPage> with 
                   primary: Colors.grey[300],
                   onPrimary: Colors.black,
                 ),
-                onPressed: () {},
+                onPressed: _animationController.forward,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: const [
@@ -81,7 +81,7 @@ class _AnimationControllerPageState extends State<AnimationControllerPage> with 
                   primary: Colors.grey[300],
                   onPrimary: Colors.black,
                 ),
-                onPressed: () {},
+                onPressed: _animationController.reverse,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -103,7 +103,7 @@ class _AnimationControllerPageState extends State<AnimationControllerPage> with 
                   primary: Colors.grey[300],
                   onPrimary: Colors.black
                 ),
-                onPressed: () {},
+                onPressed: _animationController.stop,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -125,7 +125,7 @@ class _AnimationControllerPageState extends State<AnimationControllerPage> with 
                   primary: Colors.grey[300],
                   onPrimary: Colors.black,
                 ),
-                onPressed: () {},
+                onPressed: _animationController.reset,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: const [
@@ -144,7 +144,7 @@ class _AnimationControllerPageState extends State<AnimationControllerPage> with 
                   primary: Colors.grey[300],
                   onPrimary: Colors.black
                 ),
-                onPressed: () {},
+                onPressed: _animationController.repeat,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: const [
