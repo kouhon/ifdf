@@ -11,6 +11,7 @@ class AnimationControllerPage extends StatefulWidget {
 
 class _AnimationControllerPageState extends State<AnimationControllerPage> with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
+  double _value = 0;
 
   @override
   void initState() {
@@ -19,6 +20,11 @@ class _AnimationControllerPageState extends State<AnimationControllerPage> with 
       vsync: this,
       duration: const Duration(seconds: 15)
     );
+    _animationController.addListener(() {
+      setState(() {
+        _value = _animationController.value;
+      });
+    });
   }
 
   @override
@@ -40,9 +46,9 @@ class _AnimationControllerPageState extends State<AnimationControllerPage> with 
                 fontSize: 22
               ),
             ),
-            const Text(
-              '1.00',
-              style: TextStyle(
+            Text(
+              _value.toStringAsFixed(2),
+              style: const TextStyle(
                 fontSize: 64
               ),
             ),
