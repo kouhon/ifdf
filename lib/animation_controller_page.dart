@@ -49,21 +49,26 @@ class _AnimationControllerPageState extends State<AnimationControllerPage> with 
                 fontSize: 22
               ),
             ),
-            CircularProgressIndicator(
-              value: _animationController.value,
-              backgroundColor: Colors.grey[300],
-            ),
-            const SizedBox(
-              width: 20,
-            ),
-            Text(
-              _value.toStringAsFixed(2),
-              style: const TextStyle(
-                fontSize: 64,
-                fontFeatures: [
-                  FontFeature.tabularFigures(),
-                ]
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CircularProgressIndicator(
+                  value: _animationController.value,
+                  backgroundColor: Colors.grey[300],
+                ),
+                const SizedBox(
+                  width: 20,
+                ),
+                Text(
+                  _value.toStringAsFixed(2),
+                  style: const TextStyle(
+                      fontSize: 64,
+                      fontFeatures: [
+                        FontFeature.tabularFigures(),
+                      ]
+                  ),
+                ),
+              ],
             ),
             const SizedBox(
               height: 12,
