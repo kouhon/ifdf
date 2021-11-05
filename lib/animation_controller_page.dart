@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'dart:math' as math;
@@ -47,10 +49,20 @@ class _AnimationControllerPageState extends State<AnimationControllerPage> with 
                 fontSize: 22
               ),
             ),
+            CircularProgressIndicator(
+              value: _animationController.value,
+              backgroundColor: Colors.grey[300],
+            ),
+            const SizedBox(
+              width: 20,
+            ),
             Text(
               _value.toStringAsFixed(2),
               style: const TextStyle(
-                fontSize: 64
+                fontSize: 64,
+                fontFeatures: [
+                  FontFeature.tabularFigures(),
+                ]
               ),
             ),
             const SizedBox(
