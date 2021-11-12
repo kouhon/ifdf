@@ -11,6 +11,7 @@ class TweenStaggeredPage extends StatefulWidget {
 class _TweenStaggeredPageState extends State<TweenStaggeredPage> with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
   final int _seconds = 5;
+  late Animation<int> _integer;
 
   @override
   void initState() {
@@ -22,6 +23,9 @@ class _TweenStaggeredPageState extends State<TweenStaggeredPage> with SingleTick
       setState(() {
       });
     });
+    _integer = _animationController.drive(
+      IntTween(begin: 0, end: _seconds)
+    );
   }
 
   @override
@@ -37,6 +41,10 @@ class _TweenStaggeredPageState extends State<TweenStaggeredPage> with SingleTick
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Text(
+              _integer.value.toString(),
+              style: const TextStyle(fontSize: 64),
+            ),
             Container(
               width: 120,
               height: 200,
