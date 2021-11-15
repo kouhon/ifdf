@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ifdf/tween_staggered_page.dart';
+import 'package:ifdf/views/pages/todos_list_page.dart';
 import 'animation_controller_page.dart';
 
 void main() {
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const TweenStaggeredPage()
+      home: const TodosListPage()
     );
   }
 }
