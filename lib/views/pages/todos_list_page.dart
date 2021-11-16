@@ -47,6 +47,9 @@ class _TodosListPageState extends State<TodosListPage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
+          setState(() {
+            _todos.insert(0, const Todo(name: "test"));
+          });
         },
         tooltip: 'Increment',
         child: const Icon(Icons.add),
