@@ -57,10 +57,14 @@ class TodosLoadAction {
 }
 
 class TodoToggleCompletionAction {
+  TodoToggleCompletionAction(id);
+
   Object? get id => null;
 }
 
 class TodoDeleteAction {
+  TodoDeleteAction(id);
+
   Object? get id => null;
 }
 
@@ -68,6 +72,9 @@ class TodosSaveAction {
 }
 
 class TodosSetAction {
+  get nextId => null;
+
+  get todos => null;
 }
 
 class TodoAddAction {
@@ -76,4 +83,6 @@ class TodoAddAction {
 
 class AppState {
   get todosState => null;
+
+  copyWith({todosState}) {}
 }

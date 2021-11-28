@@ -4,5 +4,7 @@ class Todo {
   final bool isCompleted;
   final String name;
 
+  get id => null;
+
   static fromJson(decode) {}
 }
