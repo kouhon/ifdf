@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 
 
 class TodosListPage extends StatelessWidget {
-  const TodosListPage({Key? key}) : super(key: key);
+  const TodosListPage._({Key? key}) : super(key: key);
 
   static Widget withDependencies({required BuildContext context}) {
     return ChangeNotifierProvider(
